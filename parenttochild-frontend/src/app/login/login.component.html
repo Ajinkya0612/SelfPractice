@@ -1,0 +1,95 @@
+<p>login works!</p>
+<p> {{title}} </p>
+<p> {{varpc}} </p>
+<ul>
+    <li>{{names[0]}}</li>
+    <li>{{names[1]}}</li>
+    <li>{{names[2]}}</li>
+    <li>{{names[3]}}</li>
+    <li>{{names[4]}}</li>
+</ul>
+
+<h1>printing names with ngFOR</h1>
+<!-- <div *ngIf="objArray.length >0;else nodata">  -->
+<!-- <ul>
+    <li *ngFor="let name of objArray">{{name | json}} </li>
+</ul>
+</div>
+<ng-template #nodata>
+    <p>There are no elements</p>
+</ng-template> -->
+<!-- <div>
+<button>Form1</button>
+<button>Form2</button>
+<button>Form3</button>
+</div> -->
+    
+<button (click)='buttonClick1("Form1 clicked")'>Form1</button>
+<button (click)='buttonClick1("Form2 clicked")'>Form2</button>
+<button (click)='buttonClick1("Form3 clicked")'>Form3</button>
+<!-- 
+<div> Form 1 clicked</div>
+<div> Form 2 clicked</div>
+<div> Form 3 clicked</div> -->
+
+
+
+<div *ngIf="form == 'Form1 clicked'">
+    You clicked form 1
+</div>
+
+
+<div *ngIf="form == 'Form2 clicked'">
+    You clicked form 2
+</div>
+
+
+<div *ngIf="form == 'Form3 clicked'">
+    You clicked form 3
+</div> 
+
+<div [ngSwitch]="form">
+    <div *ngSwitchCase="'form1'">You click form 1</div>
+    <div *ngSwitchCase="'form2'">You click form 2</div>
+    <div *ngSwitchCase="'form3'">You click form 3</div>
+    <div *ngSwitchDefault>No button clicked</div>
+</div>
+
+<h1
+    [ngStyle]="{
+    color : isActive ? 'red' : 'black',
+    textTransform : isActive ? 'uppercase' : 'lowercase'
+}"> 
+
+Hello everyone</h1>
+
+<h1
+    [ngClass]="{
+    'main' : isActive,
+    'text-weight' : isActive
+}">
+
+ngClass Directive</h1>
+
+<h1>{{dcValue | number :'2.0-1'}}</h1>
+<!-- <img [src] = "imgURL" alt = "Issue loading">
+<br>
+<img [src] = "imgURL" alt = "Issue loading">
+<h1 class = "colorred"> This text will be Red Color </h1>
+<h1 [style.color] = "changecolor ? 'red' : 'blue'"> This text will be blue </h1>
+<h2 [class] = "changecolor? 'firstselector' : 'secondselector'"> fff </h2>
+<button (click) = "buttonClick()"> Click Here </button> -->
+ 
+<!-- <input type = "text" (keyup) = "onKeyup()"> -->
+<!-- <input type = "text" (keyup) = "onKeyup($event)"> -->
+<!-- or for the above enter program, we can rather directly write this without using $event-- -->
+<!-- <input type = "text" (keyup.enter) = "onKeyup()"> -->
+ 
+<!-- <input type = "text" (keyup.enter) = "onKeyup(input.value)" #input> -->
+<br>
+<input type = "text" [value] = "onewaydata" (keyup.enter)="onKeyup()">
+ 
+<!-- <input type = "text" [(ngModel)]= "onewaydata"> -->
+ 
+<button (click) = 'sendMessage()'> Click </button>
+
